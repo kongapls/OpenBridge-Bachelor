@@ -5,9 +5,25 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <div w3-include-html="content.html"></div>
-
+    <div class="container">
+        <div w3-include-html="./Components/Compass_left.html" style="width:26%"></div>
+        <div class="weathercontainer">
+        <div w3-include-html="./Components/windAndWeather.html"></div>
+        </div>
+        <div w3-include-html="./Components/TimeAndDate.html" style="width:14%"></div>
+        <div w3-include-html="./Components/SteeringMode.html" style="width:26%"></div>
+        <div w3-include-html="./Components/Speedometer.html"></div>
+        <div w3-include-html="./Components/ShipShape.html"></div>
+        <div w3-include-html="./Components/Rudder.html"></div>
+        <div w3-include-html="./Components/PropRight.html"></div>
+        <div w3-include-html="./Components/PitchRollHeave.html"></div>
+        <div w3-include-html="./Components/GPS_Unit.html"></div>
+        <div w3-include-html="./Components/DepthGraph.html"></div>
+        <!-- <div w3-include-html="./Components/Azimuth.html"></div> -->
+    </div>
+    <script src="Includer.js"></script>
 </body>
 </html>

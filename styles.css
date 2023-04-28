@@ -1,0 +1,19 @@
+.container {
+    display:flex;
+    flex-wrap:wrap;
+    width: 100%;
+}
+.container div{
+    width: 33%;
+}
+.weathercontainer{
+    position: relative;
+    
+    width:18%;
+}
+
+.weathercontainer div svg{
+    position: relative;
+    top: 0;
+    left: 0;
+}

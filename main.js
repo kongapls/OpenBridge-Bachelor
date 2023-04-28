@@ -36,7 +36,7 @@ function createWindow() {
     }
   });
 
-  mainWindow.loadFile('./thrusters.html');
+  mainWindow.loadFile('./IndexNew.html');
 
   mainWindow.on('closed', function () {
     mainWindow = null;
