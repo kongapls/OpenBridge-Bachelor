@@ -1,0 +1,9 @@
+{
+    "windAndWeather": {
+        "direction": 65,
+        "speed": 5
+    },
+    "compass_left": {
+        "direction": 45
+    }         
+}

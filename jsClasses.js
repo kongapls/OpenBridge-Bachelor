@@ -1,6 +1,6 @@
-class wind{
-    constructor(){
-        this.windDirection = 35;
-        this.windSpeedKN = 9;
+export default class wind{
+    constructor(windDirection,windSpeedKN){
+        this.windDirection = windDirection;
+        this.windSpeedKN = windSpeedKN;   
     }
 }

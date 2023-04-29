@@ -776,9 +776,12 @@
         </clipPath>
       </defs>
     </svg>
+    <script type="module">
 
-    <script>
-      import wind from "../jsClasses.js";
+      import wind2 from '../jsClasses.js';
+      const wind=new wind2(35.9,2)
+      console.log(wind);
+    
       
       var windButtons = document.querySelectorAll("#tab-item");
       var svgWind = document.querySelector("#svgWind");
@@ -807,11 +810,9 @@
         });
       });
 
-      const wind = new wind();
-      wind.windDirection
       windRotCircular.setAttribute("transform", "rotate(" + DirValue + ", 181, 116)"); 
-      windSpeed.innerHTML = 12;
-      windDirection.innerHTML = DirValue;
+      windSpeed.innerHTML = wind.windSpeedKN;
+      windDirection.innerHTML = wind.windDirection;
 
     </script>
   </body>
