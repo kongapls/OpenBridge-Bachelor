@@ -1,9 +1,6 @@
 {
-    "windAndWeather": {
-        "direction": 65,
-        "speed": 5
-    },
-    "compass_left": {
-        "direction": 45
-    }         
+  "components": [
+    { "name": "windAndWeather", "direction": 65, "speed": 5 },
+    { "name": "compass_left", "direction": 45 }
+  ]
 }

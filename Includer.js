@@ -1,3 +1,19 @@
+import file from './components.json' assert {type: 'json'};
+
+var container = document.querySelector(".container");
+
+file.components.forEach(component => {
+  switch (component.name) {
+    case "windAndWeather":
+      container.innerHTML += '<div w3-include-html="./Components/windAndWeather.html"></div>'
+      break;
+      case "compass_left":
+      container.innerHTML += '<div w3-include-html="./Components/Compass_left.html" style="width:26%"></div>'
+      break;
+  }
+  console.log(component);
+});
+
 function includeHTML() {
     var z, i, elmnt, file, xhttp;
     /* Loop through a collection of all HTML elements: */

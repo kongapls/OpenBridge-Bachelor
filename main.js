@@ -113,6 +113,7 @@ function startReadingModbus() {
   }, DELAY);
 }
 
+
 ipcMain.on('get-modbus-data', (event) => {
   client.readInputRegisters(0, 7, function (err, data) {
     if (err) {
