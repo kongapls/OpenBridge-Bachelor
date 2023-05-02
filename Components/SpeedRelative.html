@@ -107,9 +107,30 @@
     var relativeSpeed = document.querySelector("#Relative");
     var speedShip = document.querySelector("#Ship");
 
-    trueSpeed.innerHTML = 'transform="rotate(90 0 0)"';
-    relativeSpeed.innerHTML = 'transform="rotate(90 0 0)"'
-    speedShip.innerHTML = 'transform="rotate(90 0 0)"'
+    let i = 0;
+    let j = 0;
+    let k = 40;
+    let l = 0;
+    let m = 0
+
+    function Sinewave() {
+        const t = new Date().getTime() / 1000;
+        value = Math.sin(t * (2 * Math.PI) * .1) * 1;
+        angle = t * 10 % 360;
+        i++;
+        j--;
+        k++;
+        l -= 2;
+        m += 3;
+    }
+
+    setInterval(() => {
+        Sinewave();
+        trueSpeed.setAttribute("transform", "rotate(" + i + ", 128, 128)"); 
+        relativeSpeed.setAttribute("transform", "rotate(" + j + ", 128, 128)"); 
+        speedShip.setAttribute("transform", "rotate(" + l + ", 128, 128)"); 
+    }, 10);
+
 </script>
 </body>
 </html>

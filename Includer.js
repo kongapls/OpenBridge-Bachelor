@@ -10,6 +10,37 @@ file.components.forEach(component => {
       case "compass_left":
       container.innerHTML += '<div w3-include-html="./Components/Compass_left.html" style="width:26%"></div>'
       break;
+      case "timeAndDate":
+      container.innerHTML += '<div w3-include-html="./Components/TimeAndDate.html" style="width:14%"></div>'
+      break;
+      case "steeringMode":
+      container.innerHTML += '<div w3-include-html="./Components/SteeringMode.html" style="width:26%"></div>'
+      break;  
+      case "speedometer":
+      container.innerHTML += '<div w3-include-html="./Components/Speedometer.html"></div>'
+      break;
+      case "shipShape":
+      container.innerHTML += '<div w3-include-html="./Components/ShipShape.html"></div>'
+      break;
+      case "rudder":
+      container.innerHTML += '<div w3-include-html="./Components/Rudder.html"></div>'
+      break;
+      case "propRight":
+      container.innerHTML += '<div w3-include-html="./Components/PropRight.html"></div>'
+      break;
+      case "pitchRollHeave":
+      container.innerHTML += '<div w3-include-html="./Components/PitchRollHeave.html"></div>'
+      break;
+      case "GPS_unit":
+      container.innerHTML += '<div w3-include-html="./Components/GPS_Unit.html"></div>'
+      break;
+      case "depthGraph":
+      container.innerHTML += '<div w3-include-html="./Components/DepthGraph.html"></div>'
+      break;
+      case "azimuth":
+      container.innerHTML += '<div w3-include-html="./Components/Azimuth.html"></div>'
+      break;
+       
   }
   console.log(component);
 });
