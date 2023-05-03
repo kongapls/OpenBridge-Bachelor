@@ -83,8 +83,22 @@
     var clockTimeLeft = document.querySelector("#timeLeft");
     var dateLeft = document.querySelector("#dateLeft");
 
-    clockTimeLeft.innerHTML = 15:28:19;
-    dateLeft.innerHTML = 18-06-1995;
+    function gettingTime() {
+        const date = new Date();
+        let day = date.getDate();
+        let month = date.getMonth() + 1;
+        let year = date.getFullYear();
+        let hour = date.getHours();
+        let minutes = date.getMinutes(); 
+        let seconds = date.getSeconds(); 
+        console.log(day, month, year, hour, minutes, seconds);
+        clockTimeLeft.innerHTML = `${hour}:${minutes}:${seconds}`;
+        dateLeft.innerHTML = `${day}-${month}-${year}`;         
+    }
+    setInterval(() => {
+        gettingTime()
+    }, 10);
+
 </script>
 </body>
 </html>

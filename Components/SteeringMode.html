@@ -289,15 +289,37 @@
     var distanceToWOLR = document.querySelector("#distanceToWOLRight");
     var timeToWOLR = document.querySelector("#timeToWOLRight");
     
-    courseValL.innerHTML = 050;
-    distanceToWOLL.innerHTML = 050;
-    timeToWOLL.innerHTML = 050;
-    courseValR.innerHTML = 050;
-    ROTValR.innerHTML = 050;
-    RightValR.innerHTML = 050;
-    nextCourseValR.innerHTML = 050;
-    distanceToWOLR.innerHTML = 050;
-    timeToWOLR.innerHTML = 0:5:0;
+    time = 7000;    
+    
+    function wolCountdown() {
+            setInterval(() => {
+                if (time >= 1) {
+                    let hours = time / 1000 / 60 / 60;
+                    hours = Math.trunc(hours);
+                    let minutes = time / 1000 / 60;
+                    minutes = Math.trunc(minutes);
+                    let seconds = time / 1000;
+                    seconds = Math.trunc(seconds);
+                    console.log(time +':'+ hours + 'H :' + minutes + 'M :' + seconds + 'S');
+                    timeToWOLR.innerHTML = `${hours}:${minutes}:${seconds}`;
+                    distanceToWOLL.innerHTML = `${seconds}`;
+                    timeToWOLL.innerHTML = `${seconds}`;
+                    distanceToWOLR.innerHTML = `${seconds}`;
+                    time -= 1000;
+                } if (time < 1) {
+                    time = 7000;
+                    console.log(time);
+                }
+            }, 1000);
+        }
+    
+    wolCountdown();
+    courseValL.innerHTML = 50;
+    timeToWOLL.innerHTML = 50;
+    courseValR.innerHTML = 50;
+    ROTValR.innerHTML = 50;
+    RightValR.innerHTML = 50;
+    nextCourseValR.innerHTML = 50;
     
 </script>
 </body>
