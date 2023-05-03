@@ -5,12 +5,15 @@ var container = document.querySelector(".container");
 file.components.forEach(component => {
   switch (component.name) {
     case "windAndWeather":
-      container.innerHTML += '<div w3-include-html="./Components/windAndWeather.html"></div>'
+      container.innerHTML += `<div data-windspeed="${component.speed}" data-winddir="${component.direction}" w3-include-html="./Components/windAndWeather.html"></div>`
+      setTimeout(() => {
+        addScript("./Components/windAndWheater.js");
+      }, 20);
       break;
-      case "compass_left":
+    case "compass_left":
       container.innerHTML += '<div w3-include-html="./Components/Compass_left.html" style="width:26%"></div>'
-      break;
-  }
+      break;  
+  } 
   console.log(component);
 });
 
@@ -40,6 +43,11 @@ function includeHTML() {
         return;
       }
     }
+  }
+  function addScript( src ) {
+    var s = document.createElement( 'script' );
+    s.setAttribute( 'src', src );
+    document.body.appendChild( s );
   }
   
 includeHTML();

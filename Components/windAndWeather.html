@@ -456,6 +456,7 @@
         id="svgWeather"
       width="363"
       height="334"
+      style="display: none;"
       viewBox="0 0 363 334"
       fill="none"
       xmlns="http://www.w3.org/2000/svg"
@@ -776,44 +777,5 @@
         </clipPath>
       </defs>
     </svg>
-    <script type="module">
-
-      import wind2 from '../jsClasses.js';
-      const wind=new wind2(35.9,2)
-      console.log(wind);
-    
-      
-      var windButtons = document.querySelectorAll("#tab-item");
-      var svgWind = document.querySelector("#svgWind");
-      var svgWeather = document.querySelector("#svgWeather");
-      var weatherButtons = document.querySelectorAll("#tab-item_2");
-      var degText = document.querySelector("#DegText");
-      var windSpeed = document.querySelector("#windSpeed");
-      var windDirection = document.querySelector("#windDirection");
-      var windRotCircular = document.querySelector("#ROT-Circular");
-      var DirValue = 70;
-      
-      windButtons.forEach((buttonElement) => {
-        buttonElement.style.cursor = "pointer";
-        buttonElement.addEventListener("click", function () {
-          console.log("clicked wind.");
-          svgWind.style.display = "inline";
-          svgWeather.style.display = "none";
-        });
-      });
-      weatherButtons.forEach((buttonElement) => {
-        buttonElement.style.cursor = "pointer";
-        buttonElement.addEventListener("click", function () {
-          console.log("clicked weather.");
-          svgWind.style.display = "none";
-          svgWeather.style.display = "inline";
-        });
-      });
-
-      windRotCircular.setAttribute("transform", "rotate(" + DirValue + ", 181, 116)"); 
-      windSpeed.innerHTML = wind.windSpeedKN;
-      windDirection.innerHTML = wind.windDirection;
-
-    </script>
   </body>
 </html>
