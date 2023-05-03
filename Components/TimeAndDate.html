@@ -79,6 +79,14 @@
             </clipPath>
         </defs>
     </svg>
+
+    <select id="cars">
+      <option value="volvo">Volvo</option>
+      <option value="saab">Saab</option>
+      <option value="vw">VW</option>
+      <option value="audi" selected>Audi</option>
+    </select>
+    
 <script>
     var clockTimeLeft = document.querySelector("#timeLeft");
     var dateLeft = document.querySelector("#dateLeft");
@@ -89,16 +97,22 @@
         let month = date.getMonth() + 1;
         let year = date.getFullYear();
         let hour = date.getHours();
-        let minutes = date.getMinutes(); 
-        let seconds = date.getSeconds(); 
+        hour = checkTime(hour);
+        let minutes = date.getMinutes();
+        minutes = checkTime(minutes); 
+        let seconds = date.getSeconds();
+        seconds = checkTime(seconds);
         console.log(day, month, year, hour, minutes, seconds);
-        clockTimeLeft.innerHTML = `${hour}:${minutes}:${seconds}`;
-        dateLeft.innerHTML = `${day}-${month}-${year}`;         
-    }
-    setInterval(() => {
-        gettingTime()
-    }, 10);
 
+        clockTimeLeft.innerHTML = date.toLocaleTimeString("NO");
+        dateLeft.innerHTML = date.toLocaleString("en-US");
+        setTimeout(gettingTime,1000);         
+    }
+    function checkTime(i) {
+        if (i < 10) {i = "0" + i};  // add zero in front of numbers < 10
+        return i;
+    }
+    gettingTime();
 </script>
 </body>
 </html>
