@@ -1,4 +1,5 @@
 import { windStartUp } from "./Components/windAndWheater.js";
+import { steeringStartUp } from "./Components/steeringMode.js";
 import file from "./components.json" assert { type: "json" };
 
 var container = document.querySelector(".container");
@@ -22,10 +23,17 @@ file.components.forEach((component) => {
     case "steeringMode":
       container.innerHTML +=
         '<div w3-include-html="./Components/SteeringMode.html" style="width:26%"></div>';
+      setTimeout(() => {
+        steeringStartUp();
+      }, 1000);
       break;
     case "speedometer":
       container.innerHTML +=
         '<div w3-include-html="./Components/Speedometer.html"></div>';
+      break;
+    case "speedRelative":
+      container.innerHTML +=
+        '<div w3-include-html="./Components/speedRelative.html"></div>';
       break;
     case "shipShape":
       container.innerHTML +=

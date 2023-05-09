@@ -1,8 +1,7 @@
-/**
-  This file resets default behavior in browsers.
- */
+/*
 @import url("https://fonts.googleapis.com/icon?family=Material+Icons");
 @import url("https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,600;0,700;0,800;1,300;1,400;1,600;1,700;1,800&display=swap");
+*/
 :focus {
   outline: none;
 }
@@ -5132,4 +5131,4 @@ html {
   --shadow-overlay: 0px 0px 0px 1px rgba(96, 104, 0, .400);
 }
 
-/*# sourceMappingURL=openbridge.css.map */
+/*# sourceMappingURL=openbridge.css.map

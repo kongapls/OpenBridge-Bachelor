@@ -2,6 +2,8 @@
   "components": [
     { "name": "windAndWeather" },
     { "name": "compass_left", "direction": 45 },
-    { "name": "TimeAndDate", "direction": 45 }
+    { "name": "TimeAndDate", "direction": 45 },
+    { "name": "steeringMode" },
+    { "name": "speedRelative" }
   ]
 }
