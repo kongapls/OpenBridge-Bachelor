@@ -24,7 +24,6 @@
         <div w3-include-html="./Components/DepthGraph.html"></div>
         <div w3-include-html="./Components/Azimuth.html"></div> -->
     </div>
-
     <script type="module" src="Includer.js"></script>
     <script type="module">
       import {
@@ -35,17 +34,8 @@
         wheaterAirTemp,
         wheaterHumidity,
         wheaterPressure,
+        setWindAndWeatherOrder,
       } from "./Components/windAndWheater.js";
-      windSetDirV(40);
-      windNorthRotate(0);
-      windWindRotate(0);
-      windSetSpeed(17);
-      wheaterAirTemp(10);
-      wheaterHumidity(15);
-      wheaterPressure(101);
-      windSetSpeed(14);
-      </script>
-      <script type="module">
       import {
         steeringDistanceToWolL,
         steeringTimeToWolL,
@@ -55,7 +45,33 @@
         steeringNextCourseValR,
         steeringDistanceToWolR,
         steeringTimeToWolR,
+        setSteeringModeOrder
       } from "./Components/SteeringMode.js";
+      import {
+        speedSetTrueSpeed,
+        speedSetRelativeSpeed,
+        speedSetShipRotation,
+        setSpeedRelativeOrder
+      } from "./Components/SpeedRelative.js";
+      import {
+        setCompassLeftOrder,
+        cogRotate,
+        hdgRotate,
+        setpointRotate,
+        headingRotate,
+        currentRotate,
+      } from "./Components/compassLeft.js";
+      windSetDirV(40);
+      windNorthRotate(0);
+      windWindRotate(0);
+      windSetSpeed(17);
+      wheaterAirTemp(10);
+      wheaterHumidity(15);
+      wheaterPressure(101);
+      windSetSpeed(14);
+      setWindAndWeatherOrder(3);
+
+
       steeringDistanceToWolL(13);
       steeringTimeToWolL(15);
       steeringCourseValL(16);
@@ -64,17 +80,20 @@
       steeringNextCourseValR(18);
       steeringDistanceToWolR(19);
       steeringTimeToWolR(20);
-      import {
-        speedSetTrueSpeed,
-        speedSetRelativeSpeed,
-        speedSetShipRotation
-      } from "./Components/SpeedRelative.js";
+      setSteeringModeOrder(1);
+
       speedSetTrueSpeed(10);
       speedSetRelativeSpeed(15);
       speedSetShipRotation(20);
+      setSpeedRelativeOrder(2);
+
+      setCompassLeftOrder();
+      cogRotate(0);
+      hdgRotate(0);
+      setpointRotate(0);
+      headingRotate(0);
+      currentRotate(0);
       </script>
-      
-      
     </script>
   </body>
 </html>

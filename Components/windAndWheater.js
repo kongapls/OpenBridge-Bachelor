@@ -81,3 +81,9 @@ export function wheaterPressure(pressure) {
     wheaterPressureEl.innerHTML = pressure;
   }, 200);
 }
+
+export function setWindAndWeatherOrder(order) {
+  setTimeout(() => {
+    document.querySelector("#svgWeather").parentElement.style.order = order;
+  }, 200);
+}

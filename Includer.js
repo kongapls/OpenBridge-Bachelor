@@ -7,61 +7,49 @@ var container = document.querySelector(".container");
 file.components.forEach((component) => {
   switch (component.name) {
     case "windAndWeather":
-      container.innerHTML += `<div data-windspeed="${component.speed}" data-winddir="${component.direction}" w3-include-html="./Components/windAndWeather.html"></div>`;
+      container.innerHTML += `<div w3-include-html="./Components/windAndWeather.html"></div>`;
       setTimeout(() => {
         windStartUp();
       }, 1000);
       break;
     case "compass_left":
-      container.innerHTML +=
-        '<div w3-include-html="./Components/Compass_left.html" style="width:26%"></div>';
+      container.innerHTML += `<div w3-include-html="./Components/Compass_left.html" style="grid-area: span 1 / span 2; "></div>`;
       break;
     case "timeAndDate":
-      container.innerHTML +=
-        '<div w3-include-html="./Components/TimeAndDate.html" style="width:14%"></div>';
+      container.innerHTML += `<div w3-include-html="./Components/TimeAndDate.html"></div>`;
       break;
     case "steeringMode":
-      container.innerHTML +=
-        '<div w3-include-html="./Components/SteeringMode.html" style="width:26%"></div>';
+      container.innerHTML += `<div w3-include-html="./Components/SteeringMode.html" style="grid-area: span 1 / span 2; "></div>`;
       setTimeout(() => {
         steeringStartUp();
       }, 1000);
       break;
     case "speedometer":
-      container.innerHTML +=
-        '<div w3-include-html="./Components/Speedometer.html"></div>';
+      container.innerHTML += `<div w3-include-html="./Components/Speedometer.html"></div>`;
       break;
     case "speedRelative":
-      container.innerHTML +=
-        '<div w3-include-html="./Components/speedRelative.html"></div>';
+      container.innerHTML += `<div w3-include-html="./Components/speedRelative.html"></div>`;
       break;
     case "shipShape":
-      container.innerHTML +=
-        '<div w3-include-html="./Components/ShipShape.html"></div>';
+      container.innerHTML += `<div w3-include-html="./Components/ShipShape.html"></div>`;
       break;
     case "rudder":
-      container.innerHTML +=
-        '<div w3-include-html="./Components/Rudder.html"></div>';
+      container.innerHTML += `<div w3-include-html="./Components/Rudder.html"></div>`;
       break;
     case "propRight":
-      container.innerHTML +=
-        '<div w3-include-html="./Components/PropRight.html"></div>';
+      container.innerHTML += `<div w3-include-html="./Components/PropRight.html"></div>`;
       break;
     case "pitchRollHeave":
-      container.innerHTML +=
-        '<div w3-include-html="./Components/PitchRollHeave.html"></div>';
+      container.innerHTML += `<div w3-include-html="./Components/PitchRollHeave.html"></div>`;
       break;
     case "GPS_unit":
-      container.innerHTML +=
-        '<div w3-include-html="./Components/GPS_Unit.html"></div>';
+      container.innerHTML += `<div w3-include-html="./Components/GPS_Unit.html"></div>`;
       break;
     case "depthGraph":
-      container.innerHTML +=
-        '<div w3-include-html="./Components/DepthGraph.html"></div>';
+      container.innerHTML += `<div w3-include-html="./Components/DepthGraph.html"></div>`;
       break;
     case "azimuth":
-      container.innerHTML +=
-        '<div w3-include-html="./Components/Azimuth.html"></div>';
+      container.innerHTML += `<div w3-include-html="./Components/Azimuth.html"></div>`;
       break;
   }
 });

@@ -29,3 +29,9 @@ export function speedSetShipRotation(shipRotate) {
     );
   }, 200);
 }
+export function setSpeedRelativeOrder(order) {
+  setTimeout(() => {
+    document.querySelector("#speedRelativeSvg").parentElement.style.order =
+      order;
+  }, 200);
+}

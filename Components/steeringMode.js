@@ -82,3 +82,8 @@ export function steeringTimeToWolR(timeToWolR) {
     timeToWolREl.innerHTML = timeToWolR;
   }, 200);
 }
+export function setSteeringModeOrder(order) {
+  setTimeout(() => {
+    document.querySelector("#steeringSvg").parentElement.style.order = order;
+  }, 200);
+}

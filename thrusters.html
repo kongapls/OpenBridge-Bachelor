@@ -1,69 +1,72 @@
 <!DOCTYPE html>
 <html>
-
-<head>
+  <head>
     <title>SVG Illustrator Test</title>
-</head>
+  </head>
 
-<body>
-
-
-    <object data="./Transit.svg" type="image/svg+xml" id="alphasvg" width="100%" height="100%"></object>
+  <body>
+    <object
+      data="./Transit.svg"
+      type="image/svg+xml"
+      id="alphasvg"
+      width="100%"
+      height="100%"
+    ></object>
 
     <script>
-        var a = document.getElementById("alphasvg");
-    
+      var a = document.getElementById("alphasvg");
 
-        function getIdsToVar(DocVar,Var,Id) {
-            var Var = (DocVar).contentDocument.getElementById(Id);
-        }
-        // It's important to add an load event listener to the object,
-        // as it will load the svg doc asynchronously
-        a.addEventListener("load", function () {
-            // get the inner DOM of alpha.svg
-            var asvgDoc = a.contentDocument;
-            // get the inner element by id
-            var delta = asvgDoc.getElementById("thruster_3");
-            var power = asvgDoc.getElementById("Bar_4");
-            var COG = asvgDoc.getElementById("COG");
-            var HDG = asvgDoc.getElementById("HDG");
-            var setPoint = asvgDoc.getElementById("Setpoint_5");
-            var Heading = asvgDoc.getElementById("Heading");
-            var Current = asvgDoc.getElementById("Current");
-            var Wind = asvgDoc.getElementById("Wind");
-            var ROT = asvgDoc.getElementById("rot-dots");
-            var RadVal = asvgDoc.getElementById("000");
-            var Tunnel1Bar = asvgDoc.getElementById("Bar_3");
-            var speedArrow = asvgDoc.getElementById("Relative");
-            var speedRelative = asvgDoc.getElementById("True");
-            var speedShip = asvgDoc.getElementById("Ship");
-            var GraphValue = asvgDoc.getElementById("000_9");
-            var PropulsionMain = asvgDoc.getElementById("Icon tab item");
-            var PowerMain = asvgDoc.getElementById("Icon tab item_2");
-            var EnginesMain = asvgDoc.getElementById("Icon tab item_3");
-            var MachineryMain = asvgDoc.getElementById("Icon tab item_4");
-            var CargoMain = asvgDoc.getElementById("Icon tab item_5");
-            var SystemMain = asvgDoc.getElementById("Icon tab item_6");
-            var SafetyMain = asvgDoc.getElementById("Icon tab item_7");
-            var ThrustersMain = asvgDoc.getElementById("Icon tab item_8");
+      function getIdsToVar(DocVar, Var, Id) {
+        var Var = DocVar.contentDocument.getElementById(Id);
+      }
+      // It's important to add an load event listener to the object,
+      // as it will load the svg doc asynchronously
+      a.addEventListener(
+        "load",
+        function () {
+          // get the inner DOM of alpha.svg
+          var asvgDoc = a.contentDocument;
+          // get the inner element by id
+          var delta = asvgDoc.getElementById("thruster_3");
+          var power = asvgDoc.getElementById("Bar_4");
+          var COG = asvgDoc.getElementById("COG");
+          var HDG = asvgDoc.getElementById("HDG");
+          var setPoint = asvgDoc.getElementById("Setpoint_5");
+          var Heading = asvgDoc.getElementById("Heading");
+          var Current = asvgDoc.getElementById("Current");
+          var Wind = asvgDoc.getElementById("Wind");
+          var ROT = asvgDoc.getElementById("rot-dots");
+          var RadVal = asvgDoc.getElementById("000");
+          var Tunnel1Bar = asvgDoc.getElementById("Bar_3");
+          var speedArrow = asvgDoc.getElementById("Relative");
+          var speedRelative = asvgDoc.getElementById("True");
+          var speedShip = asvgDoc.getElementById("Ship");
+          var GraphValue = asvgDoc.getElementById("000_9");
+          var PropulsionMain = asvgDoc.getElementById("Icon tab item");
+          var PowerMain = asvgDoc.getElementById("Icon tab item_2");
+          var EnginesMain = asvgDoc.getElementById("Icon tab item_3");
+          var MachineryMain = asvgDoc.getElementById("Icon tab item_4");
+          var CargoMain = asvgDoc.getElementById("Icon tab item_5");
+          var SystemMain = asvgDoc.getElementById("Icon tab item_6");
+          var SafetyMain = asvgDoc.getElementById("Icon tab item_7");
+          var ThrustersMain = asvgDoc.getElementById("Icon tab item_8");
 
-            // add behaviour
-            delta.setAttribute("transform-origin", "position:")
-            COG.setAttribute("transform-origin", "position:")
-            HDG.setAttribute("transform-origin", "position:")
-            setPoint.setAttribute("transform-origin", "position:")
-            Heading.setAttribute("transform-origin", "position:")
-            Current.setAttribute("transform-origin", "position:")
-            Wind.setAttribute("transform-origin", "position:")
-            ROT.setAttribute("transform-origin", "position:")
-            Tunnel1Bar.setAttribute("transform-origin", "position:")
-            speedArrow.setAttribute("transform-origin", "position:")
-            speedRelative.setAttribute("transform-origin", "position:")
-            speedShip.setAttribute("transform-origin", "position:")
-            GraphValue.setAttribute("transform-origin", "position:")
+          // add behaviour
+          delta.setAttribute("transform-origin", "position:");
+          COG.setAttribute("transform-origin", "position:");
+          HDG.setAttribute("transform-origin", "position:");
+          setPoint.setAttribute("transform-origin", "position:");
+          Heading.setAttribute("transform-origin", "position:");
+          Current.setAttribute("transform-origin", "position:");
+          Wind.setAttribute("transform-origin", "position:");
+          ROT.setAttribute("transform-origin", "position:");
+          Tunnel1Bar.setAttribute("transform-origin", "position:");
+          speedArrow.setAttribute("transform-origin", "position:");
+          speedRelative.setAttribute("transform-origin", "position:");
+          speedShip.setAttribute("transform-origin", "position:");
+          GraphValue.setAttribute("transform-origin", "position:");
 
-
-/*             PropulsionMain.setAttribute("type", "button",)
+          /*             PropulsionMain.setAttribute("type", "button",)
             PropulsionMain.setAttribute("href", "../SVG/Propulsion.svg")
             PowerMain.setAttribute("type", "button",)
             EnginesMain.setAttribute("type", "button")
@@ -73,44 +76,70 @@
             SafetyMain.setAttribute("type", "button")
             ThrustersMain.setAttribute("type", "button") */
 
-            let i = 0;
-            let j = 0;
-            let k = 40;
-            let l = 0;
-            let m = 0
+          let i = 0;
+          let j = 0;
+          let k = 40;
+          let l = 0;
+          let m = 0;
 
-            function Sinewave() {
-                const t = new Date().getTime() / 1000;
-                value = Math.sin(t * (2 * Math.PI) * .1) * 1;
-                angle = t * 10 % 360;
-                i++;
-                j--;
-                k += 2;
-                l -= 2;
-                m += 3;
-            }
+          function Sinewave() {
+            const t = new Date().getTime() / 1000;
+            value = Math.sin(t * (2 * Math.PI) * 0.1) * 1;
+            angle = (t * 10) % 360;
+            i++;
+            j--;
+            k += 2;
+            l -= 2;
+            m += 3;
+          }
 
-
-
-            function attributeValues(Var,Setpoint1,Setpoint2) {
-                Var.setAttribute(Setpoint1,Setpoint2);
-            }
-            setInterval(() => {
-                Sinewave();
-                attributeValues(delta, "transform", "rotate(" + i + ", 804, 407)");
-                attributeValues(COG, "transform", "rotate(" + i + ", 256, 364)");
-                attributeValues(setPoint, "transform", "rotate(" + k + ", 256, 364)");
-                attributeValues(Heading, "transform", "rotate(" + j + ", 256, 364)")
-                attributeValues(Current, "transform", "rotate(" + l + ", 256, 364)")
-                attributeValues(Wind, "transform", "rotate(" + i + ", 256, 364)")
-                attributeValues(ROT, "transform", "rotate(" + m + ", 256, 364)");
-                attributeValues(Tunnel1Bar, "transform", "matrix(" + value + " 0 0 1 809 205)");
-                attributeValues(speedArrow, "transform", "rotate(" + value * 2.5 + ", 1360, 249)");
-                attributeValues(speedRelative, "transform", "rotate(" + value * 5 + ", 1360, 249)");
-                attributeValues(speedShip, "transform", "rotate(" + value * -5 + ", 1360, 249)");
-                attributeValues(GraphValue, "transform", "text(" + angle + ")")
-            }, 50);
-/*             delta.addEventListener("", function () {
+          function attributeValues(Var, Setpoint1, Setpoint2) {
+            Var.setAttribute(Setpoint1, Setpoint2);
+          }
+          setInterval(() => {
+            Sinewave();
+            attributeValues(delta, "transform", "rotate(" + i + ", 804, 407)");
+            attributeValues(COG, "transform", "rotate(" + i + ", 256, 364)");
+            attributeValues(
+              setPoint,
+              "transform",
+              "rotate(" + k + ", 256, 364)"
+            );
+            attributeValues(
+              Heading,
+              "transform",
+              "rotate(" + j + ", 256, 364)"
+            );
+            attributeValues(
+              Current,
+              "transform",
+              "rotate(" + l + ", 256, 364)"
+            );
+            attributeValues(Wind, "transform", "rotate(" + i + ", 256, 364)");
+            attributeValues(ROT, "transform", "rotate(" + m + ", 256, 364)");
+            attributeValues(
+              Tunnel1Bar,
+              "transform",
+              "matrix(" + value + " 0 0 1 809 205)"
+            );
+            attributeValues(
+              speedArrow,
+              "transform",
+              "rotate(" + value * 2.5 + ", 1360, 249)"
+            );
+            attributeValues(
+              speedRelative,
+              "transform",
+              "rotate(" + value * 5 + ", 1360, 249)"
+            );
+            attributeValues(
+              speedShip,
+              "transform",
+              "rotate(" + value * -5 + ", 1360, 249)"
+            );
+            attributeValues(GraphValue, "transform", "text(" + angle + ")");
+          }, 50);
+          /*             delta.addEventListener("", function () {
                 setInterval(() => {
                     const t = new Date().getTime() / 1000;
                     value = Math.sin(t * (2 * Math.PI) * .1) * 90; 
@@ -118,10 +147,9 @@
                     delta.rotate(angle);
                 }, 10)
             }, true); */
-        }, false);
-
-        
+        },
+        false
+      );
     </script>
-</body>
-
+  </body>
 </html>
